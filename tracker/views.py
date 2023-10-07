@@ -1,10 +1,16 @@
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from .models import Tracker
 from .forms import TrackerForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+class Trackers(ListView):
+    """ View all food """
+    template_name = 'tracker/trackers.html'
+    model = Tracker
+    context_object_name = 'trackers'
 
 # Create your views here.
 class AddTracker(LoginRequiredMixin, CreateView):
