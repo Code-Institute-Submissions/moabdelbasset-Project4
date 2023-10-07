@@ -19,17 +19,13 @@ class Tracker(models.Model):
     
     user = models.ForeignKey(User, related_name='tracker_entries', on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)  # Name of the food or meal
-    description = RichTextField(blank=True, null=True)  # Detailed description or notes
     date = models.DateField(null=False, blank=False)  # Date when the food was consumed
-    calories = models.PositiveIntegerField(null=False, blank=False)  # Amount of calories
-    portion_size = models.CharField(max_length=200, blank=True, null=True)  # Size or weight of the portion consumed
+    portion_size = models.CharField(max_length=200, blank=False, null=False)  # Size or weight of the portion consumed
     meal_type = models.CharField(choices=MEAL_CHOICES, max_length=10, default='Snack')  # Type of meal
-    created_at = models.DateTimeField(auto_now_add=True)  # Timestamp when the entry was created
-    updated_at = models.DateTimeField(auto_now=True)  # Timestamp when the entry was last updated
     image = ResizedImageField(
-        size=(400, None), quality=75, upload_to='tracker/', force_format='WEBP', blank=False, null=False
+        size=(400, None), quality=75, upload_to='tracker/', force_format='WEBP', blank=True, null=False
     )
-    image_alt = models.CharField(max_length=100, null=False, blank=False)
+    image_alt = models.CharField(max_length=100, null=True, blank=True)
 
     class Meta:
         ordering = ['-date']

@@ -7,8 +7,8 @@ from .models import Tracker
 class TrackerAdmin(admin.ModelAdmin):
     list_display = (
         'user',
-        'calories',
         'date',
-        'image'
+        'title',
+        'portion_size',
     )
     list_filter = ('meal_type',)
