@@ -11,7 +11,7 @@ class TrackerForm(forms.ModelForm):
     """
     class Meta:
         model = Tracker
-        fields = ['title', 'date', 'portion_size', 'meal_type', 'image', 'image_alt']
+        fields = ['title', 'date', 'portion_size', 'calories', 'meal_type', 'image', 'image_alt']
 
         description = forms.CharField(widget=RichTextWidget())
 
@@ -23,6 +23,7 @@ class TrackerForm(forms.ModelForm):
             'title': 'Name of food or meal',
             'date': 'Date when the food was consumed',
             'portion_size': 'Amount in gms',
+            'calories': 'Calories',
             'meal_type': 'Type of the meal',
             'image': 'Image',
             'image_alt': 'Describe Image'      

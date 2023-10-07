@@ -10,5 +10,6 @@ class TrackerAdmin(admin.ModelAdmin):
         'date',
         'title',
         'portion_size',
+        'calories',
     )
     list_filter = ('meal_type',)

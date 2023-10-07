@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
+from .services import fetch_calories
 
 # Create your models here.
 
@@ -22,13 +23,21 @@ class Tracker(models.Model):
     date = models.DateField(null=False, blank=False)  # Date when the food was consumed
     portion_size = models.CharField(max_length=200, blank=False, null=False)  # Size or weight of the portion consumed
     meal_type = models.CharField(choices=MEAL_CHOICES, max_length=10, default='Snack')  # Type of meal
+    calories = models.FloatField(null=True, blank=True)  # Store the calorie data
     image = ResizedImageField(
         size=(400, None), quality=75, upload_to='tracker/', force_format='WEBP', blank=True, null=False
     )
     image_alt = models.CharField(max_length=100, null=True, blank=True)
+
+    
 
     class Meta:
         ordering = ['-date']
 
     def __str__(self):
         return f"{self.title} ({self.date})"
+    
+    def save(self, *args, **kwargs):
+        if not self.calories:  # If calories are not provided, fetch them
+            self.calories = fetch_calories(self.title, self.portion_size)
+        super().save(*args, **kwargs)
