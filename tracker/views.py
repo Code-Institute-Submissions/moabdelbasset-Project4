@@ -12,6 +12,9 @@ class Trackers(ListView):
     model = Tracker
     context_object_name = 'trackers'
 
+    def get_queryset(self):
+        return Tracker.objects.all().order_by('-date')   
+
 # Create your views here.
 class AddTracker(LoginRequiredMixin, CreateView):
     """

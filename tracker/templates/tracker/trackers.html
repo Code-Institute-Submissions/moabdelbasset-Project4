@@ -3,17 +3,15 @@
 {% block title %}Trackers{% endblock %}
 
 {% block content %}
-<div class="container d-flex flex-row flex-wrap justify-content-center">
-    <h1 class="text-center p-2">
-        Your entered meals
-    </h1>
+<div class="container mt-5">
+    <h1 class="text-center p-2 mb-4">Your entered meals</h1>
 
     {% for tracker in trackers %}
-    <div class="card mb-3">
+    <div class="card mb-4 shadow">
         <div class="row g-0">
             {% if tracker.image %}
             <div class="col-md-4">
-                <img src="{{ tracker.image.url }}" alt="{{ tracker.image_alt }}" class="img-fluid">
+                <img src="{{ tracker.image.url }}" alt="{{ tracker.image_alt }}" class="img-fluid rounded-start">
             </div>
             {% endif %}
             <div class="col-md-8">
