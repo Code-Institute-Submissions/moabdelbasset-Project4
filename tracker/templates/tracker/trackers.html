@@ -3,28 +3,35 @@
 {% block title %}Trackers{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center p-2 mb-4">Your entered meals</h1>
+<div class="container justify-content-center d-flex flex-row flex-wrap justify-content-center">
+    <h1 class="text-center p-2">
+        Your entered meals
+    </h1>
 
-    {% for tracker in trackers %}
-    <div class="card mb-4 shadow">
-        <div class="row g-0">
-            {% if tracker.image %}
-            <div class="col-md-4">
-                <img src="{{ tracker.image.url }}" alt="{{ tracker.image_alt }}" class="img-fluid rounded-start">
-            </div>
-            {% endif %}
-            <div class="col-md-8">
-                <div class="card-body">
+    {% for date, data in trackers_grouped.items %}
+    <div class="card mb-3 container justify-content-center">
+        <div class="card-header">
+            Date: {{ date }}
+            <p><strong>Total Calories:</strong> {{ data.total_calories }}</p>
+        </div>
+        <div class="card-body">
+            {% for tracker in data.entries %}
+            <div class="row g-0 mb-2">
+                {% if tracker.image %}
+                <div class="col-md-4">
+                    <img src="{{ tracker.image.url }}" alt="{{ tracker.image_alt }}" class="img-fluid">
+                </div>
+                {% endif %}
+                <div class="col-md-8">
                     <h5 class="card-title">{{ tracker.title }}</h5>
                     <p class="card-text">
-                        <strong>Date:</strong> {{ tracker.date }}<br>
                         <strong>Portion Size in grams:</strong> {{ tracker.portion_size }}<br>
                         <strong>Meal Type:</strong> {{ tracker.meal_type }} <br>
                         <strong>Calories:</strong> {{tracker.calories}}
                     </p>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
     {% endfor %}
