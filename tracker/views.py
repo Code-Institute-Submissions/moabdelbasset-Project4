@@ -7,6 +7,7 @@ from .forms import TrackerForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from itertools import groupby
 from operator import attrgetter
+from .services import fetch_calories
 
 
 class Trackers(ListView):
@@ -51,6 +52,15 @@ class AddTracker(LoginRequiredMixin, CreateView):
     form_class = TrackerForm
     success_url = '/tracker/'
 
+    # def form_valid(self, form: BaseModelForm) -> HttpResponse:
+    #     form.instance.user = self.request.user
+    #     return super(AddTracker, self).form_valid(form)
+
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         form.instance.user = self.request.user
-        return super(AddTracker, self).form_valid(form)
+        calories, error = fetch_calories(form.instance.title, form.instance.portion_size)
+        if error:
+            form.add_error(None, error)
+            return self.form_invalid(form)
+        form.instance.calories = calories
+        return super(AddTracker, self).form_valid(form)    

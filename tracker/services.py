@@ -9,7 +9,9 @@ def fetch_calories(food_name, portion_size):
 
     if response.status_code == requests.codes.ok:
         data = json.loads(response.text)
+        if not data:
+            return None, "Food not found in the database."
         calories = data[0]['calories']
-        return calories
+        return calories, None
     else:
-        print("Error:", response.status_code, response.text)
+        return None, "API error: {}".format(response.text)
