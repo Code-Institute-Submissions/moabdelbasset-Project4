@@ -1,10 +1,10 @@
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DeleteView
 from .models import Tracker
 from .forms import TrackerForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from itertools import groupby
 from operator import attrgetter
 from .services import fetch_calories
@@ -63,4 +63,14 @@ class AddTracker(LoginRequiredMixin, CreateView):
             form.add_error(None, error)
             return self.form_invalid(form)
         form.instance.calories = calories
-        return super(AddTracker, self).form_valid(form)    
+        return super(AddTracker, self).form_valid(form)
+    
+
+
+class DeleteTracker(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete entered tracker """
+    model = Tracker
+    success_url = '/tracker/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
