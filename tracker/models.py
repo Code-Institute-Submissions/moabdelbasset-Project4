@@ -23,7 +23,8 @@ class Tracker(models.Model):
     date = models.DateField(null=False, blank=False)  # Date when the food was consumed
     portion_size = models.CharField(max_length=200, blank=False, null=False)  # Size or weight of the portion consumed
     meal_type = models.CharField(choices=MEAL_CHOICES, max_length=10, default='Snack')  # Type of meal
-    calories = models.FloatField(null=True, blank=True)  # Store the calorie data
+    #calories = models.FloatField(null=True, blank=True)  # Store the calorie data
+    calories = models.FloatField(null=False, default='0')  # Store the calorie data
     image = ResizedImageField(
         size=(400, None), quality=75, upload_to='tracker/', force_format='WEBP', blank=True, null=False
     )

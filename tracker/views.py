@@ -1,7 +1,7 @@
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView, DeleteView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from .models import Tracker
 from .forms import TrackerForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -66,6 +66,25 @@ class AddTracker(LoginRequiredMixin, CreateView):
         return super(AddTracker, self).form_valid(form)
     
 
+class EditTracker(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ Edit entered tracker"""
+    template_name = 'tracker/edit_tracker.html'
+    model = Tracker
+    form_class = TrackerForm
+    success_url = '/tracker/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+        form.instance.user = self.request.user
+        calories, error = fetch_calories(form.instance.title, form.instance.portion_size)
+        if error:
+            form.add_error(None, error)
+            return self.form_invalid(form)
+        form.instance.calories = calories
+        return super(EditTracker, self).form_valid(form)
+
 
 class DeleteTracker(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete entered tracker """
@@ -74,3 +93,6 @@ class DeleteTracker(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+    
+
+
