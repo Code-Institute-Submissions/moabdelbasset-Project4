@@ -49,13 +49,15 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'tracker',
+    'profiles',
 
     # Other
     'crispy_forms',
     'crispy_bootstrap5',
     'cloudinary',
     'cloudinary_storage',
-    'djrichtextfield'
+    'djrichtextfield',
+    
 ]
 
 SITE_ID = 1
