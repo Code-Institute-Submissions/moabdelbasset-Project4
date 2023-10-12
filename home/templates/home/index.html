@@ -15,18 +15,7 @@
 </div>
 {% endif %}
 
-{% if is_authenticated %}
-    <!-- Dashboard Components for Logged-in Users -->
-    <h2>Welcome back, {{ request.user.username }}!</h2>
-    
-    <!-- Display Recent Activities, Statistics, etc. -->
-    <div>
-        <h3>Your Recent Meals:</h3>
-        {% for meal in title %}
-        <!-- Render meal details -->
-        {% endfor %}
-    </div>
-{% endif %}
+
 
 <div class="container flex-column pt-3">
     <section class="text-center">
