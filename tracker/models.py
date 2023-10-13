@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from .services import fetch_calories
+from profiles.models import Profile
 
 # Create your models here.
 
@@ -18,7 +19,8 @@ class Tracker(models.Model):
         ('Snack', 'Snack'),
     )
     
-    user = models.ForeignKey(User, related_name='tracker_entries', on_delete=models.CASCADE)
+    #user = models.ForeignKey(User, related_name='tracker_entries', on_delete=models.CASCADE)
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="trackers")
     title = models.CharField(max_length=300, null=False, blank=False)  # Name of the food or meal
     date = models.DateField(null=False, blank=False)  # Date when the food was consumed
     portion_size = models.CharField(max_length=200, blank=False, null=False)  # Size or weight of the portion consumed

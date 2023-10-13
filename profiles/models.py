@@ -11,7 +11,8 @@ from imagekit.processors import ResizeToFill
 
 class Profile(models.Model):
     """ Profile Model """
-    user = models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
+    #user = models.ForeignKey(User, related_name="profile", on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
     image = models.ImageField(upload_to="profiles/")
     image_thumbnail = ImageSpecField(source='image',
                                   processors=[ResizeToFill(300, 300)],

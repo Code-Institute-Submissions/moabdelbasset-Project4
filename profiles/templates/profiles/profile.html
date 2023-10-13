@@ -18,21 +18,14 @@
             </div>
             <h1>{{ profile.user.username }}</h1>
             <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
-            <p><strong>Recorded Meals: </strong>{{ profile.user.tracker.title.count }}</p>
+            <p><strong>Recorded Meals: </strong>{{ profile.trackers.all.count }}</p>
+            <p><strong>Weight: </strong>{{ profile.user.weight}}</p>
             {% if profile.bio is not none %}
             {{ profile.bio|safe }}
             {% endif %}
             {% if request.user == profile.user %}
             <button id="myBtn", class="btn btn-primary w-25 mb-4">Edit</button>
             {% endif %}
-        </div>
-        <div class="profile-tracker">
-            <h2 class="text-center pb-4">Latest Meals</h2>
-            {% for tracker in profile.user.tracker.title.all %}
-            <p>{{tracker.title}}</p>
-            {{tracker.date}}
-            <hr>
-            {% endfor %}
         </div>
     </div>
     <div id="myModal" class="modal mt-5">

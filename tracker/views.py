@@ -16,18 +16,6 @@ class Trackers(ListView):
     model = Tracker
     context_object_name = 'trackers'
 
-    # Return data ordered by date
-    # def get_queryset(self):
-    #    return Tracker.objects.all().order_by('-date') 
-  
-    # Grouping data entered by date
-    # def get_context_data(self, **kwargs):
-    #    context = super().get_context_data(**kwargs)
-    #    grouped_by_date = {}
-    #    for date, group in groupby(self.object_list.order_by('-date'), lambda x: x.date):
-    #        grouped_by_date[date] = list(group)
-    #    context['trackers_grouped'] = grouped_by_date
-    #    return context
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -40,6 +28,9 @@ class Trackers(ListView):
         
         context['trackers_grouped'] = grouped_by_date
         return context
+    
+    def get_queryset(self):
+        return Tracker.objects.filter(user=self.request.user.profile)
 
 
 # Create your views here.
@@ -52,12 +43,10 @@ class AddTracker(LoginRequiredMixin, CreateView):
     form_class = TrackerForm
     success_url = '/tracker/'
 
-    # def form_valid(self, form: BaseModelForm) -> HttpResponse:
-    #     form.instance.user = self.request.user
-    #     return super(AddTracker, self).form_valid(form)
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
-        form.instance.user = self.request.user
+        #profile = self.request.user.profile
+        form.instance.user = self.request.user.profile
         calories, error = fetch_calories(form.instance.title, form.instance.portion_size)
         if error:
             form.add_error(None, error)
@@ -74,10 +63,11 @@ class EditTracker(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = '/tracker/'
 
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user.profile == self.get_object().user
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
-        form.instance.user = self.request.user
+        user = self.request.user.profile
+        form.instance.user = self.request.user.profile
         calories, error = fetch_calories(form.instance.title, form.instance.portion_size)
         if error:
             form.add_error(None, error)
@@ -92,7 +82,7 @@ class DeleteTracker(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = '/tracker/'
 
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user.profile == self.get_object().profile
     
 
 
