@@ -13,10 +13,10 @@
               <li class="nav-item me-auto mb-2">
                 <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
+              {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'trackers' %}active{% endif %}" href="{% url 'trackers' %}">Tracker</a>
               </li>
-              {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'profile' %}active{% endif %}" href="{% url 'profile' request.user.id %}">Profile</a>
               </li>
