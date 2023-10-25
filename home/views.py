@@ -8,15 +8,16 @@ from datetime import datetime, timedelta
 
 # Create your views here.
 
+
 class Index(ListView):
-    template_name = 'home/index.html'
+    template_name = "home/index.html"
     model = Tracker
-    context_object_name = 'trackers'
+    context_object_name = "trackers"
     print("Entered home function")
 
     def get_queryset(self):
         return self.model.objects.all()[:3]
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         calories = []
@@ -26,12 +27,14 @@ class Index(ListView):
             # Fetch data for the last 7 days
             profile = self.request.user.profile
             start_date = datetime.now() - timedelta(days=7)
-            trackers = Tracker.objects.filter(user=profile, date__gte=start_date).order_by('date')
+            trackers = Tracker.objects.filter(
+                user=profile, date__gte=start_date
+            ).order_by("date")
 
             for tracker in trackers:
                 calories.append(tracker.calories)
-                dates.append(tracker.date.strftime('%Y-%m-%d'))
+                dates.append(tracker.date.strftime("%Y-%m-%d"))
 
-        context['calories'] = calories
-        context['dates'] = dates
+        context["calories"] = calories
+        context["dates"] = dates
         return context

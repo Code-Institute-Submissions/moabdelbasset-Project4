@@ -4,11 +4,12 @@ from .models import Profile
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (
-        'pk',
-        'user',
-        'bio',
-        'image',
-        'weight',
+        "pk",
+        "user",
+        "bio",
+        "image",
+        "weight",
     )
+
 
 admin.site.register(Profile, ProfileAdmin)
