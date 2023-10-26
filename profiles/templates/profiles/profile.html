@@ -19,7 +19,8 @@
             <h1>{{ profile.user.username }}</h1>
             <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
             <p><strong>Recorded Meals: </strong>{{ profile.trackers.all.count }}</p>
-            <p><strong>Weight: </strong>{{ profile.user.weight}}</p>
+            <p><strong>Age: </strong>{{ profile.age}}</p>
+            <p><strong>Weight: </strong>{{ profile.weight}}</p>
             {% if profile.bio is not none %}
             {{ profile.bio|safe }}
             {% endif %}
