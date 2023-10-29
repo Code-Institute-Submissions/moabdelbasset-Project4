@@ -11,3 +11,24 @@ This is my fourth portfolio project for Code Institute and my goal with this pro
 
 ## Contents
 
+## The Strategy Plane
+CalorieCompass goal is to provide a comprehensive and user-friendly app that enables users to track their nutritional intake, understand the caloric and nutritional content of foods, and suggests activities to offset caloric intake. We want to become the go-to app for individuals looking to maintain a healthy diet, lose weight, or gain insight into their eating habits.
+
+## The Ideal User
+- Someone wants to track their caloric intake daily.
+- Someone wants to know nutrition facts about the food they eat.
+- Someone wants to track sports activities needed to burn the food they ate.
+
+## Site Goals
+- Provide users to create their own profile.
+- Provide users to add their daily meals.
+- Provide users an interface to know nutritional facts about food.
+- Provide users a graphical representation of the macro nutrients food.
+- Provide users a graphical representation of their caloric intake.
+
+## Agile planning
+This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories were assigned to Epics, prioritized under the labels, Must Have, Should Have and Could Have. They were assigned story points according to complexity. Story points were adjusted mid-project to use the common Fibonacci sequence correctly. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
+
+The Kanban board was created using Github projects and can be located [here](https://github.com/users/moabdelbasset/projects/2/views/1) and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
+
+
