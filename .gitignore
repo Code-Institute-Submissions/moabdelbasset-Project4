@@ -10,3 +10,4 @@ cloudinary_python.txt
 
 #Environment
 .venv/
+env.py
