@@ -24,5 +24,6 @@ urlpatterns = [
     path("", include("home.urls")),
     path("tracker/", include("tracker.urls")),
     path("profiles/", include("profiles.urls")),
+    path("nutrition/", include("nutrition.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
 ]

@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Nutrition Info{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Header Section -->
+    <div class="row justify-content-center">
+        <div class="container flex-column pt-5">
+            <h1 class="main-title text-left">Monitor Your Macro Nutrient Intake</h1>
+            <p class="text-left pt-3">
+                Discover how to monitor your macro intake and explore workout options that can effectively help you burn off the calories from this meal.
+            </p>    
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center pt-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group input-group-lg mb-3">
+                    <input type="text" name="query" class="form-control"
+                        placeholder="Search for calories in your food..." required>
+                    <button class="btn btn-primary" type="submit">Find Calories</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- API Response Section -->
+    {% if api %}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% if api == "oops! There was an error" %}
+                <div class="alert alert-warning text-center">Oh no! This food is not found in our database</div>
+            {% else %}
+                <h2 class="text-center">{{ api.0.name | capfirst }} has a total of <strong>{{ api.0.calories }} Calories</strong></h2>
+                {% if api.0.calories > 500 %}
+                    <img src="{% static 'images/shocked.png' %}" class="img-fluid mx-auto d-block" />
+                {% endif %}
+                {% if api.0.sodium_mg > 10 %}
+                    <div class="alert alert-danger mt-3" role="alert">
+                        This food contains a high amount of sodium. High sodium causes severe dehydration and water retention.
+                    </div>
+                {% endif %}
+                {% if api.0.sugar_g > 9 %}
+                    <div class="alert alert-danger mt-3" role="alert">
+                        This food contains a high amount of sugar. Sugar causes insulin spikes and is a no.1 cause for obesity.
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Nutritional Values Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            <div class="card shadow rounded">
+                <div class="card-body">
+                    <h3 class="card-title">Nutritional Values</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Serving Size per 100/Grams</li>
+                        <li class="list-group-item">Carbohydrates: {{ api.0.carbohydrates_total_g }}</li>
+                        <li class="list-group-item">Cholesterol: {{ api.0.cholesterol_mg }}</li>
+                        <li class="list-group-item">Saturated fat: {{ api.0.fat_saturated_g }}</li>
+                        <li class="list-group-item">Total Fat: {{ api.0.fat_saturated_g }}</li>
+                        <li class="list-group-item">Fiber Content: {{ api.0.fat_total_g }}</li>
+                        <li class="list-group-item">Potassium: {{ api.0.potassium_mg }}</li>
+                        <li class="list-group-item">Protein: {{ api.0.protein_g }}</li>
+                        <li class="list-group-item">Sodium: {{ api.0.sodium_mg }}</li>
+                        <li class="list-group-item">Sugar: {{ api.0.sugar_g }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calories Burn Section -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10">
+            <h4 class="text-center mb-4">To burn {{ api.0.calories }} calories you will have to:</h4>
+            <div class="card-deck">
+                <!-- Jogging Card -->
+                <div class="d-flex align-items-center mb-5">
+                    <div class="flex-shrink-0"> 
+                        <img src="{% static 'icons/running.png' %}" alt="Jogging">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Jog</h5>
+                        <p class="card-text">You will have to jog for <strong>{{ jog_minutes }}</strong> Minutes</p>
+                    </div>
+                </div>
+                <!-- Yoga Card -->
+                <div class="d-flex align-items-center mb-5">
+                    <div class="flex-shrink-0">
+                        <img src="{% static 'icons/yoga.png' %}" alt="Yoga">
+                    </div>                    
+                    <div class="card-body">
+                        <h5 class="card-title">Do Power Yoga</h5>
+                        <p class="card-text">You will have to do power yoga for <strong>{{ yoga_minutes }}</strong> Minutes</p>
+                    </div>
+                </div>
+                <!-- Weight Lifting Card -->
+                <div class="d-flex align-items-center mb-5">
+                    <div class="flex-shrink-0"> 
+                        <img src="{% static 'icons/weightlifter.png' %}" alt="Weight Lifting">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Get a Gym Workout</h5>
+                        <p class="card-text">You will have to lift weights for <strong>{{ gym_minutes }}</strong> Minutes</p>
+                    </div>
+                </div>
+                <!-- Walking Card -->
+                <div class="d-flex align-items-center mb-5">
+                    <div class="flex-shrink-0">
+                        <img src="{% static 'icons/walking.png' %}" alt="Walking">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Go for a Brisk Walk</h5>
+                        <p class="card-text">You will have to brisk walk for <strong>{{ walk_minutes }}</strong> Minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+    integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Carbohydrates', 'Cholesterol', 'Saturated Fat', 'Total Fat', 'Fiber Content', 'Potassium', 'Protein', 'Sodium', 'Sugar'],
+                datasets: [{
+                    label: 'Nutritional Values of {{api.0.name | capfirst}}',
+                    data: [
+                        {{ api.0.carbohydrates_total_g }},
+                        {{ api.0.cholesterol_mg }},
+                        {{ api.0.fat_saturated_g }},
+                        {{ api.0.fat_saturated_g }},
+                        {{ api.0.fat_total_g }},
+                        {{ api.0.potassium_mg }},
+                        {{ api.0.protein_g }},
+                        {{ api.0.sodium_mg }},
+                        {{ api.0.sugar_g }}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+{% endblock %}

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "home",
     "tracker",
     "profiles",
+    "nutrition",
     # Other
     "crispy_forms",
     "crispy_bootstrap5",
