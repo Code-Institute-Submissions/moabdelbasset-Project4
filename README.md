@@ -54,3 +54,70 @@ This is the prototype of the project that may change during its development.
     <img src="./Docs/wireframes/wireframe6.png" alt="Desktop Part 1">
 </p>
 </details>
+
+### Security
+
+Views were secured where needed using the Django decorator @login_required. Access to the views using the @login_decorator can only be accessed by registered users. This means that if a user tries to access a view that is decorated with @login_required, but they are not currently logged in, they will be redirected to the login page instead.
+
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, API keys, or sensitive information was added to the repository. In production, these variables were added to the Heroku config vars within the project.
+
+
+## **The Scope Plane**
+
+* Responsive Design - The site should be fully functional on all devices from 320px up
+* Hamburger menu for mobile devices
+* Home page describing the site and links to features for registered users
+
+## **The Structure Plane**
+
+### **Features**
+`
+As a User I would like to view the site on my different devices so that I can view the site on the go
+`
+
+**Navbar**
+
+`
+As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs
+`
+
+The Navbar contains links for Home, Tracked food, Add meals, Nutrion page, and Profile pages.
+
+The following navigation items are available on all pages:
+  * Home - Visible to all but for logged in users it will give a summary of caloric intake in the last 7 days
+  * Login - Visible to logged out users
+  * Signup - Visible to logged out users
+  * Tracker - Visible to logged in users
+  * Profile -> profile.html - Visible to logged in users
+  * Record your meals -> add_tracker.html - Visible to logged in users
+  * Nutrition -> nutrition.html - Visible to logged in users
+  * Logout -> logout.html - Visible to logged in users
+
+The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices. It is easily noticeable, intuitive, and easy to use.
+
+![Navbar Desktop 1](./Docs/screenshots/header1.png)
+
+![Navbar Desktop 2](./Docs/screenshots/header2.png)
+
+![Navbar Mobile](./Docs/screenshots/header3.png)  
+
+
+**Footer**
+
+`
+As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have
+`
+
+The footer is placed at the bottom of the page. The social media links are displayed with icons provided by Font Awesome. This is where the user can click on a social media link and reach out to the developer for news and updates. A link to the developer's Github repository is provided and displayed using the Font Awesome Github icon. These icons have aria labels added to ensure users with assistive screen reading technology know the purpose of the links. They also open new tabs as they lead users away from the site.
+
+![Footer](./Docs/screenshots/footer.png)  
+
+**Homepage**
+
+There are two variations of the Home page that change based on User login/registration. Users that have not signed up will be met with a welcome message and some information about the site. Details of features available to registered Users are shown and a Sign-Up button is provided.
+
+Users that have registered and logged in will be met with a similar layout but this time there will be buttons linking the user to various functions but they will land on a user dashboard that will display the user caloric consumption during the last seven days.
+
+![Homepage before login](./Docs/screenshots/homepage1.png) 
+
+![Homepage after login](./Docs/screenshots/homepage2.png)   
