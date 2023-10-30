@@ -32,3 +32,25 @@ This project was developed using agile methodologies by delivering small feature
 The Kanban board was created using Github projects and can be located [here](https://github.com/users/moabdelbasset/projects/2/views/1) and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
 
 
+## The Skeleton Plane
+This is the prototype of the project that may change during its development. 
+<details><summary>Wireframe Example</summary>
+<p>
+    <img src="./Docs/wireframes/wireframe1.png" alt="Desktop Part 1">
+</p>
+<p>
+    <img src="./Docs/wireframes/wireframe2.png" alt="Desktop Part 1">
+</p>
+<p>
+    <img src="./Docs/wireframes/wireframe3.png" alt="Desktop Part 1">
+</p>
+<p>
+    <img src="./Docs/wireframes/wireframe4.png" alt="Desktop Part 1">
+</p>
+<p>
+    <img src="./Docs/wireframes/wireframe5.png" alt="Desktop Part 1">
+</p>
+<p>
+    <img src="./Docs/wireframes/wireframe6.png" alt="Desktop Part 1">
+</p>
+</details>
