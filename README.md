@@ -121,3 +121,105 @@ Users that have registered and logged in will be met with a similar layout but t
 ![Homepage before login](./Docs/screenshots/homepage1.png) 
 
 ![Homepage after login](./Docs/screenshots/homepage2.png)   
+
+**Tracker Page**
+`
+As a User I want to have a section where I can view all my addead meals with the coresponding calories
+`
+
+The Tracker page has a similar layout to the Home page as the user can view all the added meals with the date and the calories.
+
+![Tracker page](./Docs/screenshots/tracker1.png)   
+
+`
+As a User I want to edit the entered meals in the Tracker page
+`
+
+In the tracker page users can edit meals entered 
+
+![Tracker page](./Docs/screenshots/tracker2.png)   
+
+`
+As a User I want to delete any entered meal in the Tracker page
+`
+
+In the tracker page users can delete meals entered 
+
+**Profile**
+
+`
+As a User I would like access to my Profile so that I can upload an image or alter my details where needed
+`
+
+Profile features are only available to registered users.
+
+When a user signs up to the site a Profile will automatically be created for them. They can access their Profile page from the Profile Navbar link. On the Profile page, the user can add/change information like their profile image, age and weight. Users can also upload their own Profile image and if they do not want to a default image is provided. 
+
+![Tracker page](./Docs/screenshots/profile1.png)   
+
+
+**Record your meal**
+`
+As a User I would like record my meals
+`
+
+Record your meal is only available to registered users.
+
+Users can add their meal and the app will calculate the amount of calories for this meal and will record it with the date choosed by the user
+
+![Record your meal page](./Docs/screenshots/record.png)   
+
+
+**Nutrition**
+`
+As a User I would like to search for nutritional facts for certain amount of food
+`
+
+Users can search for nutritional facts of the searched food. It can give warnings if some food has high of fats, calories or sugar. Also, It will view the nutritonal facts in a graphical representation and it will give the amount of effort needed to burn the amount of calories you will get from this food
+
+![Nutrition Page](./Docs/screenshots/nutrition1.png)   
+![Nutrition Page](./Docs/screenshots/nutrition2.png)   
+
+
+**Error Pages**
+
+**404 Page**
+
+`
+As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist
+`
+
+A 404 page has been implemented and will display if a user navigates to a broken link.
+
+The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need for the browser's back button.
+
+![Error 404](/docs/readme_screenshots/desktop_404.webp)
+
+**403 & 403_csrf Pages**
+
+`
+As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views
+`
+
+A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. Users will be directed to this page if they alter the URLs and attempt to edit, delete, or access pages that are restricted.
+A 403_csrf error page has been implemented to provide feedback to the user when there is an issue with csrf verification. 
+
+![Error 403](/docs/readme_screenshots/desktop_403.webp)
+![Error 403_csrf](/docs/readme_screenshots/desktop_403_csrf.webp)
+
+**500 Page**
+
+`
+As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
+`
+
+A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
+
+![Error 500](/docs/readme_screenshots/desktop_500.webp)
+
+
+**Favicon**
+
+A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
+
+
