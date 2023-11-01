@@ -223,3 +223,172 @@ A 500 error page has been displayed to alert users when an internal server error
 A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
 
 
+**Mobile**
+
+`
+As a User I would like to view the site on my different devices so that I can view the site on the go
+`
+![Tracker page](./Docs/screenshots/mobile1.png)   
+
+### **Future Features**
+
+**Creating a social network:** Ability for users to add other users as friends and see their progress.
+
+**Track bodyweight:** Ability for users to track body weight.
+
+**Talk to nutritionist:** Ability for a user to schedule a consultation sessions with a nutritionist.
+
+
+## **The Surface Plane**
+
+### **Design**
+
+#### **Colour Scheme**
+
+I opted for a very minimalistic aesthetic and the below 4 colours were chosen. I went for a lighter theme theme with a grey to add some contrast and vibrance to the site. The colours have been implemented across the site and are included in the buttons/links and their hover effects.
+
+![Coolors](./Docs/screenshots/color.png)  
+
+#### **Typography**
+
+The Roboto font was used throughout the website. This font is from google fonts and was imported into the style sheet.
+
+[Back to top &uarr;](#contents)
+
+### **Frameworks and Tools Used**
+1. [Django](https://www.djangoproject.com/)
+    - Django was used as the main python framework in the development of this project
+1. [Bootstrap](https://blog.getbootstrap.com/)
+    - Bootstrap was used for general layout and spacing requirements for the site.
+1. [APINinja](https://api-ninjas.com/api/nutrition)
+    - The Nutrition API extracts nutrition information from text using natural language processing.
+1. [Cloudinary](https://cloudinary.com/)
+    - Cloudinary was used to store all static files and images
+1. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. [GitHub:](https://github.com/)
+    - GitHub is used to store the project's code after being pushed from Git.
+1. [Heroku](https://www.heroku.com/)
+    - Heroku was used to deploy the app.
+1. [Balsamiq](https://balsamiq.com/)
+    - Balsamiq was used to produce the sites wireframes
+1. [XConvert](https://www.xconvert.com/)
+    - XConvert was used to convert images to webp or png where required.
+1. [Stackoverflow](https://stackoverflow.com/)
+    - Stackoverflow was used on many occasions to figure out some troublesome code.
+1. [CI Python Linter](https://pep8ci.herokuapp.com/)
+    - I used CI Python Linter for the validation of the site's Python code.
+1. [Grammarly](https://www.grammarly.com/)
+    - Grammarly was used to check typography.
+
+
+### **Libraries Used**
+
+- asgiref - A standard Python library to allow for asynchronous web apps and servers to communicate with each other.
+- cloudinary - A Python package allowing integration between the application and Cloudinary.
+- coverage - is a third-party package that helps developers measure code coverage in their Python codebase.
+- dj-database-url - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
+- dj3-cloudinary-storage - A Django package that facilitates integration with Cloudinary storage.
+- Django - A python package for the Django framework.
+- django-active-link - A Django package used to highlight an active link in the site navigation bars.
+- django-allauth - An integrated set of Django applications addressing user authentication, registration and account management.
+- django-ckeditor - is a third-party package that provides a rich text editor widget for Django web applications.
+- django-crispy-forms - A Django package that provides tags and filters to control the rendering behaviour of Django forms.
+- django-js-asset - is a third-party package for Django that simplifies the process of including JavaScript assets in Django templates.
+- django-richtextfield - is a third-party package for Django that provides a model field for rich text editing. 
+- gunicorn - A Python WSGI HTTP Server for UNIX.
+- oauthlib - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic for Python 3.6+.
+- psycopg2 - A PostgreSQL database adapter for Python.
+- PyJWT - A Python library that allows for encoding and decoding of JSON Web Tokens (JWT).
+- python3-openid - A set of Python packages to support use of the OpenID decentralized identity system.
+- pytz - A Python package for world timezone definitions, modern and historical.
+- requests-oauthlib - A Python package for OAuthlib authentication support for Requests.
+- sqlparse - A non-validating SQL parser for Python.
+
+
+[Back to top &uarr;](#contents)
+
+## **Testing**
+I have included details of testing both during development and post-development in a separate document called [TESTING.md](TESTING.md)
+
+[Back to top &uarr;](#contents)
+
+## **Deployment**
+
+### **GitHub**
+
+This project was developed by forking a specialized [Code Institute template](https://github.com/Code-Institute-Org/python-essentials-template) which simulates a terminal in the web browser. 
+
+1. Click Use this template
+2. Name the repository
+3. Launch using the Gitpod web extension
+4. Pin project in Gitpod workspaces
+
+### **Version Control**
+
+For version control the following steps were made:
+
+For version control the following steps were made:
+
+1. Changes made to files in Gitpod
+2. Files made ready for commit with command - git add "filename", or git add . to add all files
+3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
+4. To move the changes to Github the following command was run - git push
+5. Alternatively files can be made ready for commit using the Source Control staging area in Gitpod
+6. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
+
+### **Clone Repo**
+
+Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
+
+1. Navigating to https://github.com/seanf316/P4-Cinema-Go
+2. Clicking on the arrow on the green code button at the top of the list of files
+3. Select Local then HTTPS copy the URL it provides to the clipboard
+4. Navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
+5. Type 'git clone' and paste the HTTPS link you copied from GitHub
+6. Press enter and git will clone the repository to your local machine
+
+### **Forking the GitHub Repository**
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the repository [P4-Cinema-Go](https://github.com/seanf316/P4-Cinema-Go)
+2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### **Final Deployment with Heroku**
+
+The below steps were followed to deploy this project to Heroku:
+1. Go to [Heroku](https://dashboard.heroku.com/apps) and click "New" to create a new app.
+2. After choosing the app name and setting the region, press "Create app".
+3. Go to "Settings" and navigate to Config Vars, enter the below:
+    - SECRET_KEY: (Enter your secret key)
+    - DATABASE_URL: (Enter the database URL from ElephantSQL)
+    - CLOUNDINARY_URL: (Enter Cloudinary API URL)
+    - PORT: 8000
+    - API_KEY: (An API key will need to be retrieved from the [TMDB](https://www.themoviedb.org/))
+4. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub.
+Once GitHub is chosen, find your repository and connect it to Heroku.
+5. Scroll down to Manual Deploy, make sure the "main" branch is selected, and click "Deploy Branch". 
+6. The deployed app can be found [here](https://cinema-go-p4.herokuapp.com/).
+
+[Back to top &uarr;](#contents)
+
+## **Credits**
+
+1. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
+    - This repository was created using the template provided by Code Institute. Also, without the knowledge gained through the coursework, I would not be able to create this site so thank you Code Institute.
+1. [Django Documentation](https://docs.djangoproject.com/en/4.0/)
+    - Thanks to the Django docs which were also used as a step-by-step while going through the project to ensure everything was set up correctly.
+1. [Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/faq.html)
+    - Thanks to the Alluath documentation which was referenced during development.
+1. [Daisy McGirr - Django Playlist](https://www.youtube.com/@IonaFrisbee)
+    - Daisy channel helped me alot in understanding how Django projects work.
+1. [Stackoverflow](https://stackoverflow.com/)
+    - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
+1. [Slack](https://slack.com/intl/en-ie/)
+    - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
+1. [Youtube](https://www.youtube.com/)
+    - Various videos were watched for further learning and Django project ideas. Some playlists I have reviewed are [Django Project: Movie App](https://www.youtube.com/watch?v=tm9Yps3IkmQ&list=PLBQzvdjNG8c-g_mVYUNiVDwwO5YgcbNwT), [Django IMDB clone](https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ&index=1)
+1. Sean Finn
+    - I reviewed the above Project 4 repo for inspiration on README layouts and testing.
