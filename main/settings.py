@@ -31,6 +31,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "DEVELOPMENT" in os.environ
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 
 ALLOWED_HOSTS = ["caloriecompass-f135054ab2fa.herokuapp.com"]
 CSRF_TRUSTED_ORIGINS = ["https://caloriecompass-f135054ab2fa.herokuapp.com"]
@@ -187,14 +189,14 @@ LOGIN_REDIRECT_URL = "/"
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-if 'DEVELOPMENT' in os.environ:
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATIC_URL = "static/"
+# if 'DEVELOPMENT' in os.environ:
+#     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# else:
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Cloudinary Settings
