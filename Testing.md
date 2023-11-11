@@ -26,8 +26,29 @@ Unit tests were created to test the functionality of the apps. These can be foun
 
 **Models**
 
-![Profiles Models](/docs/unit_testing/test_profiles_models.webp)
+![Profiles Models](/docs/unit_testing/profile_test_models.png)
 
-**Forms**
+#### **Tracker**
 
-![Profiles Forms](/docs/unit_testing/test_profiles_forms.webp)
+**Views**
+
+![Tracker Views](/docs/unit_testing/tracker_test_views.png)
+
+**Models**
+
+![Tracker Models](/docs/unit_testing/tracker_test_models.png)
+
+
+### **Site Coverage Report**
+
+Through my testing, I was able to get a total of 90% coverage across the site. The remaining 5% will be covered through manual testing.
+
+![Coverage 1](/docs/unit_testing/coverage_report.png)
+
+[Back to top &uarr;](#contents)
+
+
+## **Manual Testing**
+| Test Case | Description  | Steps    | Excpected Results | Actual Results | Pass/Fail |
+|-----------|--------------|----------|-------------------|----------------|-----------|
+| TC-01     |
