@@ -341,7 +341,7 @@ For version control the following steps were made:
 
 Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
 
-1. Navigating to https://github.com/seanf316/P4-Cinema-Go
+1. Navigating to https://github.com/moabdelbasset/Project4
 2. Clicking on the arrow on the green code button at the top of the list of files
 3. Select Local then HTTPS copy the URL it provides to the clipboard
 4. Navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
@@ -352,7 +352,7 @@ Creating a clone enables you to make a copy of the repository at that point in t
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-1. Log in to GitHub and locate the repository [P4-Cinema-Go](https://github.com/seanf316/P4-Cinema-Go)
+1. Log in to GitHub and locate the repository [Project4](https://github.com/moabdelbasset/Project4)
 2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
@@ -366,11 +366,11 @@ The below steps were followed to deploy this project to Heroku:
     - DATABASE_URL: (Enter the database URL from ElephantSQL)
     - CLOUNDINARY_URL: (Enter Cloudinary API URL)
     - PORT: 8000
-    - API_KEY: (An API key will need to be retrieved from the [TMDB](https://www.themoviedb.org/))
+    - API_KEY: (An API key will need to be retrieved from the [API Ninja](https://api-ninjas.com/api/nutrition))
 4. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub.
 Once GitHub is chosen, find your repository and connect it to Heroku.
 5. Scroll down to Manual Deploy, make sure the "main" branch is selected, and click "Deploy Branch". 
-6. The deployed app can be found [here](https://cinema-go-p4.herokuapp.com/).
+6. The deployed app can be found [here](https://caloriecompass-f135054ab2fa.herokuapp.com/).
 
 [Back to top &uarr;](#contents)
 
