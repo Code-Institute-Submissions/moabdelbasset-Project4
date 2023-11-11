@@ -22,7 +22,7 @@ Unit tests were created to test the functionality of the apps. These can be foun
 
 **Views**
 
-![Profiles Views](/docs/unit_testing/test_profiles.png)
+![Profiles Views](/docs/unit_testing/test_profile_views.png)
 
 **Models**
 
