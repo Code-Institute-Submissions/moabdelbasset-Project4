@@ -309,7 +309,7 @@ The Roboto font was used throughout the website. This font is from google fonts 
 [Back to top &uarr;](#contents)
 
 ## **Testing**
-I have included details of testing both during development and post-development in a separate document called [TESTING.md](TESTING.md)
+I have included details of testing both during development and post-development in a separate document called [Testing.md](Testing.md)
 
 [Back to top &uarr;](#contents)
 
