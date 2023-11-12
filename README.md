@@ -193,7 +193,7 @@ A 404 page has been implemented and will display if a user navigates to a broken
 
 The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need for the browser's back button.
 
-![Error 404](/docs/readme_screenshots/desktop_404.webp)
+![Error 404](./Docs/screenshots/404.png)
 
 **403 & 403_csrf Pages**
 

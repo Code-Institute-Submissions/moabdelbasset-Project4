@@ -15,35 +15,35 @@ Unit tests were created to test the functionality of the apps. These can be foun
 
 #### **Home**
 
-![Home](/docs/unit_testing/test_home.png)
+![Home](./Docs/unit_testing/test_home.png)
 
 
 #### **Profiles**
 
 **Views**
 
-![Profiles Views](/docs/unit_testing/test_profile_views.png)
+![Profiles Views](./Docs/unit_testing/test_profile_views.png)
 
 **Models**
 
-![Profiles Models](/docs/unit_testing/profile_test_models.png)
+![Profiles Models](./Docs/unit_testing/profile_test_models.png)
 
 #### **Tracker**
 
 **Views**
 
-![Tracker Views](/docs/unit_testing/tracker_test_views.png)
+![Tracker Views](./Docs/unit_testing/tracker_test_views.png)
 
 **Models**
 
-![Tracker Models](/docs/unit_testing/tracker_test_models.png)
+![Tracker Models](./Docs/unit_testing/tracker_test_models.png)
 
 
 ### **Site Coverage Report**
 
 Through my testing, I was able to get a total of 90% coverage across the site. The remaining 5% will be covered through manual testing.
 
-![Coverage 1](/docs/unit_testing/coverage_report.png)
+![Coverage 1](./Docs/unit_testing/coverage_report.png)
 
 [Back to top &uarr;](#contents)
 
@@ -90,7 +90,7 @@ Through my testing, I was able to get a total of 90% coverage across the site. T
 
 The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined in below:
 
-![PEP8 Results](/Docs/screenshots/pep_results.png)
+![PEP8 Results](./Docs/screenshots/pep_results.png)
 
 [Back to top &uarr;](#contents)
 
@@ -104,7 +104,7 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the p
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the site's CSS code.
 
-![W3C CSS Validator](/Docs/screenshots/html.png)
+![W3C CSS Validator](./Docs/screenshots/html.png)
 
 [Back to top &uarr;](#contents)
 
@@ -114,7 +114,7 @@ All pages were run through the [W3C Markup Validator](https://validator.w3.org/n
 
 Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
 
-![W3C Markup Validator](/Docs/screenshots/html.png)
+![W3C Markup Validator](./Docs/screenshots/html.png)
 
 [Back to top &uarr;](#contents)
 
@@ -122,7 +122,7 @@ Due to the Django templating language code used in the HTML files, these could n
 
 Every page of the site was passed through the [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension. Only 1 page returned errors which was the Reviews Page. It showed 91 contrast errors due to no fallback contrast being in place if the image does not populate, to resolve I added a background colour to the Review cards and all contrast errors were cleared.
 
-![Wave](/Docs/screenshots/webp.png)
+![Wave](./Docs/screenshots/webp.png)
 
 [Back to top &uarr;](#contents)
 
