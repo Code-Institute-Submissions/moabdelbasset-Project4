@@ -93,4 +93,4 @@ class DeleteTracker(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = "/tracker/"
 
     def test_func(self):
-        return self.request.user.profile == self.get_object().profile
+        return self.request.user.profile == self.get_object().user
