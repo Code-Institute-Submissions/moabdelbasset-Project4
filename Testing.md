@@ -83,3 +83,73 @@ Through my testing, I was able to get a total of 90% coverage across the site. T
 | TC-30     | Warning should appear if the food contains high sugar | Go the nutrition page and search for pepsi | a warning should appear because food contains high amount of sugar | Warning appeared | Pass |
 | TC-31     | Warning should appear if the food contains high sugar | Go the nutrition page and search for chicken | a warning should appear because food contains high amount of sodium | Warning appeared | Pass |
 
+
+## **Validators**
+
+### **CI Python Linter**
+
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined in below:
+
+![PEP8 Results](/Docs/screenshots/pep_results.png)
+
+[Back to top &uarr;](#contents)
+
+### **JSHint**
+
+[JSHint](https://jshint.com/) was used to validate the Javascript code used in the project. Only one undefined variable is showing "bootstrap" - this was taken from the walkthrough and altered to fix a console error. No other issues to report.
+
+[Back to top &uarr;](#contents)
+
+### **W3C CSS Validator**
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the site's CSS code.
+
+![W3C CSS Validator](/Docs/screenshots/html.png)
+
+[Back to top &uarr;](#contents)
+
+### **W3C Markup Validator**
+
+All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors due to missing closing tags, image height values, and Richtextfield inputs. All of these issues were corrected and all pages passed validation.
+
+Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
+
+![W3C Markup Validator](/Docs/screenshots/html.png)
+
+[Back to top &uarr;](#contents)
+
+### **Wave Accessibility Tests**
+
+Every page of the site was passed through the [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension. Only 1 page returned errors which was the Reviews Page. It showed 91 contrast errors due to no fallback contrast being in place if the image does not populate, to resolve I added a background colour to the Review cards and all contrast errors were cleared.
+
+![Wave](/Docs/screenshots/webp.png)
+
+[Back to top &uarr;](#contents)
+
+## **Responsiveness**
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and upwards. The site was tested on multiple browsers and devices as outlined below.
+
+| **Browser Tested** | **Actual Result** | **Pass/Fail** |
+|--------------------|-------------------|---------------|
+| Chrome             | As Expected       | Pass          |
+| Firefox            | As Expected       | Pass          |
+| Edge               | As Expected       | Pass          |
+| Mac OS Safari      | As Expected       | Pass          |
+
+| **Device Tested** | **Actual Result** | **Pass/Fail** |
+|-------------------|-------------------|---------------|
+| Mac Air M2 | As Expected       | Pass          |
+| HP Elite Laptop | As Expected       | Pass          |
+| HP 23 Monitor | As Expected       | Pass          |
+| Samsung Note 10+  | As Expected       | Pass          |
+| Samsung Note 20   | As Expected       | Pass          |
+| Samsung S21+      | As Expected       | Pass          |
+| Samsung Tab S7+   | As Expected       | Pass          |
+| iPhone 13 Pro Max | As Expected       | Pass          |
+| iPhone 11         | As Expected       | Pass          |
+| iPad Pro 12 inch  | As Expected       | Pass          |
+| One Plus 8T  | As Expected       | Pass          |
+| Xiaomi Redmi Note 11 | As Expected       | Pass          |
+
+[Back to top &uarr;](#contents)

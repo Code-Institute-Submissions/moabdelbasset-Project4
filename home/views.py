@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 
 
 class Index(ListView):
+    """A ListView for displaying the most recent Tracker entries"""
     template_name = "home/index.html"
     model = Tracker
     context_object_name = "trackers"
