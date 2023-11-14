@@ -195,18 +195,6 @@ The 404 page will allow the user to easily navigate back to the main website if 
 
 ![Error 404](./Docs/screenshots/404.png)
 
-**403 Pages**
-
-`
-As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views
-`
-
-A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. Users will be directed to this page if they alter the URLs and attempt to edit, delete, or access pages that are restricted.
-A 403_csrf error page has been implemented to provide feedback to the user when there is an issue with csrf verification. 
-
-![Error 403](/docs/readme_screenshots/desktop_403.webp)
-![Error 403_csrf](/docs/readme_screenshots/desktop_403_csrf.webp)
-
 **500 Page**
 
 `
