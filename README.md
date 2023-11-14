@@ -354,7 +354,6 @@ The below steps were followed to deploy this project to Heroku:
     - DATABASE_URL: (Enter the database URL from ElephantSQL)
     - CLOUNDINARY_URL: (Enter Cloudinary API URL)
     - PORT: 8000
-    - API_KEY: (An API key will need to be retrieved from the [API Ninja](https://api-ninjas.com/api/nutrition))
 4. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub.
 Once GitHub is chosen, find your repository and connect it to Heroku.
 5. Scroll down to Manual Deploy, make sure the "main" branch is selected, and click "Deploy Branch". 
