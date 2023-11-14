@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
-class Profiles(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
+class Profiles(TemplateView):
     """User Profile View"""
 
     template_name = "profiles/profile.html"
