@@ -195,7 +195,7 @@ The 404 page will allow the user to easily navigate back to the main website if 
 
 ![Error 404](./Docs/screenshots/404.png)
 
-**403 & 403_csrf Pages**
+**403 Pages**
 
 `
 As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views
@@ -215,7 +215,7 @@ As a Developer I can implement a 500 error page so that I can alert users when a
 
 A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
 
-![Error 500](/docs/readme_screenshots/desktop_500.webp)
+![Error 500](./Docs/screenshots/500.png)
 
 
 **Favicon**
