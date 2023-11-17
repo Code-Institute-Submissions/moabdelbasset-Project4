@@ -9,8 +9,6 @@ The application is designed with user-friendly features that make it easy for yo
 ## Project Goals
 This is my fourth portfolio project for Code Institute and my goal with this project is to display my newly acquired skills with frameworks such as Bootstrap and Django. I decided to build a calorie tracker webapp that fetches the information from an API website
 
-## Contents
-
 ## The Strategy Plane
 CalorieCompass goal is to provide a comprehensive and user-friendly app that enables users to track their nutritional intake, understand the caloric and nutritional content of foods, and suggests activities to offset caloric intake. We want to become the go-to app for individuals looking to maintain a healthy diet, lose weight, or gain insight into their eating habits.
 

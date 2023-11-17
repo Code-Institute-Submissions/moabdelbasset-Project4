@@ -4,8 +4,6 @@
 
 A wide range of testing was carried out during development by myself.
 
-## **Contents**
-
 
 ## **Automated Testing**
 
