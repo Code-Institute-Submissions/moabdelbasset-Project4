@@ -14,7 +14,6 @@ class Index(ListView):
     template_name = "home/index.html"
     model = Tracker
     context_object_name = "trackers"
-    print("Entered home function")
 
     def get_queryset(self):
         return self.model.objects.all()[:3]

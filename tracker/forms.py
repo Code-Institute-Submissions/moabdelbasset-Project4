@@ -34,7 +34,7 @@ class TrackerForm(forms.ModelForm):
             "title": "Name of food or meal",
             "date": "Date when the food was consumed",
             "portion_size": "Amount in gms",
-            "calories": "Calories",
+            "calories": "Calories - If you don't know it, leave it as 0, and we will calculate it for you",
             "meal_type": "Type of the meal",
             "image": "Image",
             "image_alt": "Describe Image",
